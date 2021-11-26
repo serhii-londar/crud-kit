@@ -25,7 +25,7 @@ extension CRUDControllerProtocol {
     }
     
     public func indexAll(req: Request) -> EventLoopFuture<[T.Public]> {
-        T.query(on: req.db).all().public(db: req.db).paginate(for: req)
+        T.query(on: req.db).paginate(for: req).public(db: req.db)
     }
     
     public func index(req: Request) -> EventLoopFuture<T.Public> {
